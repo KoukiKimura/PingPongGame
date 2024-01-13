@@ -6,7 +6,7 @@ public class StarController : MonoBehaviour
 {
 
 	// 回転速度
-	private float rotSpeed = 3.0f;
+	private float rotSpeed = 1.0f;
 	
     // Start is called before the first frame update
     void Start()

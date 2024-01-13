@@ -57,7 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d53d7b829797af649a7f14b6530aae88, type: 2}
     - target: {fileID: 919132149155446097, guid: 5d6bbeee73ece6c4aa7d50cdd887a5c5, type: 3}
       propertyPath: m_Name
-      value: LargeCloud
+      value: LargeCloudPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5d6bbeee73ece6c4aa7d50cdd887a5c5, type: 3}
+      propertyPath: m_TagString
+      value: LargeCloudTag
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d6bbeee73ece6c4aa7d50cdd887a5c5, type: 3}
@@ -80,3 +84,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1101733005453906574, guid: 5d6bbeee73ece6c4aa7d50cdd887a5c5, type: 3}
+--- !u!114 &-8383381315867132508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6176521627564373850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02c6c6f78eab3f4cad4aa48d82b5b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
