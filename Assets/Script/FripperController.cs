@@ -36,11 +36,11 @@ public class FripperController : MonoBehaviour
         
         //矢印キー離された時フリッパーを元に戻す
         if(Input.GetKeyUp(KeyCode.LeftArrow) && tag == "LeftFripperTag"){
-        SetAngle (this.defaultAngle);
+        	SetAngle (this.defaultAngle);
         }
         //矢印キー離された時フリッパーを元に戻す
         if(Input.GetKeyUp(KeyCode.RightArrow) && tag == "RightFripperTag"){
-        SetAngle (this.defaultAngle);
+        	SetAngle (this.defaultAngle);
         }
         
     }
