@@ -6,6 +6,11 @@ TagManager:
   tags:
   - LeftFripperTag
   - RightFripperTag
+  - SmallStarTag
+  - SmallCloudTag
+  - LargeStarTag
+  - LargeCloudTag
+  - LaneTag
   layers:
   - Default
   - TransparentFX

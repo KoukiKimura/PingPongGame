@@ -17,9 +17,9 @@ public class SpringController : MonoBehaviour
 	// ターゲットのデフォルトの色
 	Color defaultColor = Color.white;
 	
-	float plungerY = 3.5f;
-	float plungerZ = 3.5f;
+	float plungerY = -5f;
 	
+	Vector3 pos = new Vector3();
 	
     // Start is called before the first frame update
     void Start()
@@ -32,31 +32,30 @@ public class SpringController : MonoBehaviour
         // オブジェクトの最初の色を設定
         myMaterial.SetColor("_EmissionColor", this.defaultColor*minEmission);
 
+        pos = this.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
         Rigidbody rb = this.GetComponent<Rigidbody>();
+        SpringJoint sj = this.GetComponent<SpringJoint>();
         Debug.Log("SpringController Update");
-        Vector3 pos = this.transform.position;
         if (Input.GetKey(KeyCode.DownArrow))
         {
-        	plungerY = Mathf.Clamp(plungerY*-1, -3.5f, 0);
-        	plungerZ = Mathf.Clamp(Mathf.Sin(plungerZ-1), -3.5f, 0);
-        	pos.y = plungerY;
-        	pos.z = plungerZ;
-        	Debug.Log("plungerY:plungerZ -> " + plungerY.ToString() + " : " + plungerZ.ToString());
+        	//plungerY = plungerY * -1;
+        	//pos.y = plungerY;
+        	Debug.Log("plungerY -> " + plungerY.ToString());
 	        
-	        rb.AddForce(pos);
+	        this.transform.position = pos;
+	        sj.spring = 0;
+	        // rb.AddForce(pos, ForceMode.Force);
         }
         else
         {
-        	plungerY = Mathf.Clamp(Mathf.Cos(plungerY), -3.5f, 0);
-        	plungerZ = Mathf.Clamp(Mathf.Sin(plungerZ - 1), -3.5f, 0);
-        	pos.y = plungerY;
-        	pos.z = plungerZ;
-        	Debug.Log("plungerY:plungerZ -> " + plungerY.ToString() + " : " + plungerZ.ToString());
+	        sj.spring = 70;
+        	// rb.velocity = Vector3.zero;
+        
         }
         
 		// 光らせる強度を計算する
