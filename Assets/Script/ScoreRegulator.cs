@@ -18,6 +18,11 @@ public class ScoreRegulator : MonoBehaviour
 	// ターゲットのデフォルトの色
 	Color defaultColor = Color.white;
 	
+	// スコアを表示するテキスト
+	private GameObject scoreText;
+	// スコアのバリュー
+	private long scoreValue;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +40,13 @@ public class ScoreRegulator : MonoBehaviour
         
         // オブジェクトの最初の色を設定
         myMaterial.SetColor("_EmissionColor", this.defaultColor*minEmission);
+        
+        
+        // シーン中のGameOverTextオブジェクトを取得
+        this.scoreText = GameObject.Find("ScoreText");
+        if (!long.tryParse(this.scoreText, out scoreValue)){
+        	scoreValue = 0;
+        }
     }
 
     // Update is called once per frame
@@ -50,6 +62,21 @@ public class ScoreRegulator : MonoBehaviour
         	
         	// 現在の角度を小さくする
         	this.degree -= this.speed;
+        	
+        	
+        	long textValue = 0;
+
+        	
+	        // タグによってスコアを変える
+	        if (tag == "SmallStarTag"){
+	        	textValue = 5;
+	        } else if (tag == "LargeStarTag"){
+	        	textValue = 10;
+	        } else if (tag == "SmallCloudTag" || tag == "LargeCloudTag"){
+	        	textValue = 20;
+	        }
+	        scoreValue += textValue;
+        	this.scoreText.GetComponent<Text> ().text = scoreValue.ToString();
         }
     }
     

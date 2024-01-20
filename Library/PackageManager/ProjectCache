@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638407794688506024
-    m_Hash: 2357649487
+      ticks: 638413003590835458
+    m_Hash: 1051959569
   m_LockFileStatus:
     m_FilePath: E:/Unity/PingPongGame/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638407794689218040
-    m_Hash: 2210126617
+      ticks: 638413003590845156
+    m_Hash: 4177314884
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -710,6 +710,7 @@ m_PackageAssets:
         - 1.4.0
         - 1.4.1
         - 1.4.2
+        - 1.4.3
         - 2.0.1-exp.1
         - 2.0.1-exp.2
         - 2.0.1-pre.12
@@ -728,6 +729,7 @@ m_PackageAssets:
         - 1.4.0
         - 1.4.1
         - 1.4.2
+        - 1.4.3
         - 2.0.1-exp.1
         - 2.0.1-exp.2
         - 2.0.1-pre.12
@@ -891,6 +893,7 @@ m_PackageAssets:
         - 3.0.4
         - 3.0.5
         - 3.0.6
+        - 3.0.7
         - 3.2.0-pre.1
         - 3.2.0-pre.2
         - 3.2.0-pre.3
@@ -902,6 +905,7 @@ m_PackageAssets:
         - 4.0.0-pre.2
         compatible:
         - 3.0.6
+        - 3.0.7
         - 3.2.0-pre.1
         - 3.2.0-pre.2
         - 3.2.0-pre.3
@@ -909,7 +913,7 @@ m_PackageAssets:
         - 3.2.0-pre.5
         - 3.2.0-pre.6
         - 3.2.0-pre.7
-        verified: 3.0.6
+        verified: 3.0.7
       dependencies:
       - name: com.unity.ugui
         version: 1.0.0
