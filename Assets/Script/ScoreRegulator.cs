@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreRegulator : MonoBehaviour
 {
@@ -18,10 +19,10 @@ public class ScoreRegulator : MonoBehaviour
 	// ターゲットのデフォルトの色
 	Color defaultColor = Color.white;
 	
-	// スコアを表示するテキスト
-	private GameObject scoreText;
-	// スコアのバリュー
-	private long scoreValue;
+	// スコアを表示するオブジェクト
+	public GameObject scoreText;
+	// スコアを表示するバリュー
+	public long scoreValue;
 	
     // Start is called before the first frame update
     void Start()
@@ -41,17 +42,14 @@ public class ScoreRegulator : MonoBehaviour
         // オブジェクトの最初の色を設定
         myMaterial.SetColor("_EmissionColor", this.defaultColor*minEmission);
         
-        
         // シーン中のGameOverTextオブジェクトを取得
         this.scoreText = GameObject.Find("ScoreText");
-        if (!long.tryParse(this.scoreText, out scoreValue)){
-        	scoreValue = 0;
-        }
+
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {		
         if (this.degree >= 0){
         	// 光らせる強度を計算する
         	Color emissionColor = 
@@ -63,26 +61,35 @@ public class ScoreRegulator : MonoBehaviour
         	// 現在の角度を小さくする
         	this.degree -= this.speed;
         	
-        	
-        	long textValue = 0;
+		}
 
-        	
-	        // タグによってスコアを変える
-	        if (tag == "SmallStarTag"){
-	        	textValue = 5;
-	        } else if (tag == "LargeStarTag"){
-	        	textValue = 10;
-	        } else if (tag == "SmallCloudTag" || tag == "LargeCloudTag"){
-	        	textValue = 20;
-	        }
-	        scoreValue += textValue;
-        	this.scoreText.GetComponent<Text> ().text = scoreValue.ToString();
-        }
     }
     
     // 衝突時に飛ばれる関数
     void OnCollisionEnter(Collision other){
-    	// 角度を180に設定
-    	this.degree = 180;
+        	long textValue = 0;
+
+	        // タグによってスコアを変える
+	        if (tag == "SmallStarTag"){
+	        	textValue = 5;
+				Debug.Log ("SmallStarTag");
+				Debug.Break ();
+	        } else if (tag == "LargeStarTag"){
+	        	textValue = 10;
+			Debug.Log ("textValue : " + textValue.ToString());
+			Debug.Log ("scoreValue : " + scoreValue.ToString());
+				Debug.Log ("LargeStarTag");
+				Debug.Break ();
+	        } else if (tag == "SmallCloudTag" || tag == "LargeCloudTag"){
+	        	textValue = 20;
+				Debug.Log ("SmallCloudTag");
+				Debug.Break ();
+	        }
+			Debug.Log ("textValue : " + textValue.ToString());
+			Debug.Log ("scoreValue : " + scoreValue.ToString());
+	        scoreValue = scoreValue + textValue;
+        	this.scoreText.GetComponent<Text> ().text = scoreValue.ToString();
+
+			Debug.Log ("scoreValue : " + scoreValue.ToString());
     }
 }

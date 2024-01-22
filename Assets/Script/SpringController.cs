@@ -24,7 +24,7 @@ public class SpringController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("SpringController Start");
+        //Debug.Log("SpringController Start");
         this.defaultColor = Color.white;
         // オブジェクトにアタッチしているMaterialを取得
         this.myMaterial = GetComponent<Renderer> ().material;
@@ -40,12 +40,10 @@ public class SpringController : MonoBehaviour
     {
         Rigidbody rb = this.GetComponent<Rigidbody>();
         SpringJoint sj = this.GetComponent<SpringJoint>();
-        Debug.Log("SpringController Update");
+        //Debug.Log("SpringController Update");
         if (Input.GetKey(KeyCode.DownArrow))
         {
-        	//plungerY = plungerY * -1;
-        	//pos.y = plungerY;
-        	Debug.Log("plungerY -> " + plungerY.ToString());
+        	//Debug.Log("plungerY -> " + plungerY.ToString());
 	        
 	        this.transform.position = pos;
 	        sj.spring = 0;
